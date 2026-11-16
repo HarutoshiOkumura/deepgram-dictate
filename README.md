@@ -1,6 +1,6 @@
 # deepgram-dictate
 
-Talk instead of type, anywhere on your Linux desktop.
+Talk instead of type, anywhere on your Linux desktop. Wisprflow but for Linux. 
 
 Tap a key, say what you want to write, tap it again, and the text appears in whatever window you are using: a browser, a chat app, an editor, a terminal.
 It works like Wispr Flow, but for Hyprland on Linux, and uses [Deepgram](https://deepgram.com) to turn speech into text.
