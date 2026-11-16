@@ -1,0 +1,9 @@
+[Unit]
+Description=Deepgram dictation control socket
+
+[Socket]
+ListenStream=%t/deepgram-dictate.sock
+SocketMode=0600
+
+[Install]
+WantedBy=sockets.target

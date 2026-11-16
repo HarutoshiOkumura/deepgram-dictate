@@ -1,0 +1,37 @@
+[project]
+name = "deepgram-dictate"
+version = "0.1.0"
+description = "System-wide hotkey dictation for Hyprland / Wayland, powered by Deepgram streaming speech-to-text"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = ["websockets>=15"]
+
+[project.scripts]
+dictate = "deepgram_dictate.cli:main"
+dictate-key = "deepgram_dictate.hotkey:main"
+
+[dependency-groups]
+dev = ["pytest>=8.3", "pytest-asyncio>=0.25", "ruff>=0.8"]
+
+[build-system]
+requires = ["uv_build>=0.9,<0.14"]
+build-backend = "uv_build"
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "ASYNC", "RUF"]
+
+[tool.ruff.lint.per-file-ignores]
+# Full-width CJK punctuation is the subject matter here, not a look-alike typo.
+"src/deepgram_dictate/text.py" = ["RUF001"]
+"tests/test_text.py" = ["RUF001"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+markers = ["live: talks to the real Deepgram API (needs a stored API key)"]
+addopts = "-m 'not live'"

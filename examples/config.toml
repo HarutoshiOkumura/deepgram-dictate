@@ -1,0 +1,19 @@
+# Example ~/.config/deepgram-dictate/config.toml
+#
+# Every setting is optional. This file adds the three extra languages that
+# hypr/dictation.conf binds to Right Alt + C / M / J.
+# Apply changes with: systemctl --user restart deepgram-dictate
+
+# Right Alt alone dictates English (the built-in "en" profile).
+
+[profiles.yue]  # Cantonese, Traditional characters
+label = "粵"
+language = "zh-HK"
+
+[profiles.cmn]  # Mandarin. "zh-CN" writes Simplified; use "zh-TW" for Traditional.
+label = "普"
+language = "zh-CN"
+
+[profiles.ja]  # Japanese
+label = "日"
+language = "ja"
